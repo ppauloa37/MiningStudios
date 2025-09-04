@@ -23,10 +23,10 @@
          console.log(serverline)
          window.onload = () => {
             if (serverline === "#login=login?pag=Index?pss=cads") {
-                document.body.innerHTML = '<h1>Cadastrar</h1><br><form data-netlify="true" method="post"><input type="text" name="name" id="name"><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
+                document.body.innerHTML = '<h1>Cadastrar</h1><br><form name="cads"netlify><input type="text" name="name" id="name"><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
             }
             else if (serverline === "#login=login?pag=Index?pss=login") {
-              document.body.innerHTML = '<h1>Login</h1><br><form data-netlify="true" method="post"><input type="text" name="name" id="name"><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
+              document.body.innerHTML = '<h1>Login</h1><br><form name="Login" netlify><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
                 if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
                   if (!user) {
