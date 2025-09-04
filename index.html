@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiningsGame studios | PT-BR HOME</title>
+    <title>Document</title>
     <style>
         body {
             background-color: black;
             color: white;
-            margin: 0px;
         }
-        .studioimage {
-            width: 100px;
-        }
-        #root {
-            padding: 5px;
-            background-color: rgba(15, 15, 15, 0.575);
-        }
-        a {
-            text-decoration: none;
-        }
-        #root a {
-            text-decoration: none;
-            color: white;
+        input {
+            border: 1px solid white;
+            width: 300px;
+            margin-bottom: 2px;
         }
     </style>
 </head>
 <body>
-    <div id="root">
-        <img class="studioimage" src="/Minig.png">
-        <a href="/">Inicio</a>
-        <a href="login/#login=login?pag=Index?pss=login">login</a>
-        <a href="login/#login=login?pag=Index?pss=cads">Cadastro</a>
-    </div>
+    <script type="module">
+         var serverline = window.location.hash
+         console.log(serverline)
+         window.onload = () => {
+            if (serverline === "#login=login?pag=Index?pss=cads") {
+                document.body.innerHTML = '<h1>Cadastrar</h1><br><form data-netlify="true" method="post"><input type="text" name="name" id="name"><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
+            }
+            else if (serverline === "#login=login?pag=Index?pss=login") {
+              document.body.innerHTML = '<h1>Login</h1><br><form data-netlify="true" method="post"><input type="text" name="name" id="name"><br><input type="email" name="email" id="email"><br><input type="password name="password" id="password"><br><button type="submit" id="send">Cadastrar</button><br><p id="status"></p></form>'
+            }
+            else {
+              document.body.innerHTML = "<h1>Server login error code: 0000283x"
+            }
+         }
+    </script>
 </body>
 </html>
